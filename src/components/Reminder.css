@@ -1,5 +1,5 @@
 .Row {
-    font-size: .8em;
+    font-size: .9em;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,7 +13,6 @@
     flex-direction: column;
 }
 .Row-reminder-text {
-    font-weight: bold;
     text-overflow: ellipsis;
 }
 

@@ -3,3 +3,10 @@
     color: white;
     text-align: left;
 }
+
+.No-row {
+    text-align: center;
+    color: white;
+    font-size: .9em;
+    padding-top: 20px;
+}

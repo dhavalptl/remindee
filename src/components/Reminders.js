@@ -7,6 +7,11 @@ import "./Reminders.css";
 
 function Reminders() {
     const reminders = useSelector((state) => state.reminderReducer);
+    if(reminders.length === 0){
+      return <main className="Content">
+        <div className="No-row">No reminders to show :)</div>
+      </main>
+    }
     return (
       <main className="Content">
         <AutoSizer>
