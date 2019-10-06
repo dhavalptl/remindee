@@ -7,10 +7,23 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  color: goldenrod;
 }
 
 .App-content {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+::-webkit-input-placeholder {
+  color: darkgray;
+}
+
+:-ms-input-placeholder {
+  color: darkgray;
+}
+
+::placeholder {
+  color: darkgray;
 }

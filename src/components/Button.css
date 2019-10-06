@@ -4,11 +4,13 @@
     margin-right: 2px;
     height: 30px;
     font-size: .8em;
-    background-color: goldenrod;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     outline: none !important;
+    color: goldenrod;
+    border: 1px solid goldenrod;
 }

@@ -17,6 +17,12 @@ export default function ReminderReducer(state=initialState, action) {
             return state.filter(reminder => reminder.id !== action.payload)
         case "CLAER_ALL_REMINDERS":
             return [];
+        case "SHOW_TODAY_REMINDERS":
+            return state;
+        case "SHOW_TOMORROW_REMINDERS":
+            return state;
+        case "SHOW_WEEKLY_REMINDERS":
+            return state;
         default:
             return state;
     }

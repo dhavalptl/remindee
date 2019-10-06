@@ -1,12 +1,12 @@
 .Content {
     flex: 1;
-    color: white;
+    color: goldenrod;
     text-align: left;
 }
 
 .No-row {
     text-align: center;
-    color: white;
+    color: goldenrod;
     font-size: .9em;
     padding-top: 20px;
 }
