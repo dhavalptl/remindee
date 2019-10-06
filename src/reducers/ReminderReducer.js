@@ -1,28 +1,17 @@
-import uuid from "uuid/v4";
-import moment from "moment";
-
-const initialState = [{
-    id: uuid(),
-    text: "Buy toys",
-    createdOn: moment().toDate()
-}, {
-    id: uuid(),
-    text: "Learn K8s"
-}];
+const initialState = {
+    durationFilter: 7,
+    reminders: []
+};
 export default function ReminderReducer(state=initialState, action) {
     switch (action.type) {
         case "ADD_REMINDER":
-            return [...state, action.payload]
+            return {...state, reminders: [...state.reminders, action.payload]};
         case "DELETE_REMINDER":
-            return state.filter(reminder => reminder.id !== action.payload)
+            return {...state, reminders: state.filter(reminder => reminder.id !== action.payload)};
         case "CLAER_ALL_REMINDERS":
-            return [];
-        case "SHOW_TODAY_REMINDERS":
-            return state;
-        case "SHOW_TOMORROW_REMINDERS":
-            return state;
-        case "SHOW_WEEKLY_REMINDERS":
-            return state;
+            return {...state, reminders: []};
+        case "DURATION_FILTER":
+            return {...state, durationFilter: action.payload};
         default:
             return state;
     }

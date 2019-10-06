@@ -2,25 +2,27 @@
     height: 50px;
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid grey;
-    padding: 10px 3px 10px 3px;
 }
 
 .Statistics-item {
     flex:1;
-    margin: 3px;
     background-color: goldenrod;
     color: black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 2px;
     font-weight: bold;
     font-size: .7em;
     cursor: pointer;
+    padding-top: 5px;
 }
 
 .Statistics-item-count {
+    margin: 2px;
     font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+}
+
+.Statistics-item-content {
+    border-right: 1px solid black;
 }
