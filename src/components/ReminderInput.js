@@ -31,7 +31,7 @@ function ReminderInput() {
         <footer className="Footer">
             <input type="text" value={text} className="Footer-input Input" onKeyPress={onKeyPressOnText} placeholder="Enter reminder text" onChange={({target}) => setText(target.value)}/>
             <div className="Footer-items">
-                <input type="date" value={startReminder} onChange={({target}) => setStartReminder(getFormattedDate(target.value))}/>
+                <input type="date" min={startReminder} value={startReminder} onChange={({target}) => setStartReminder(getFormattedDate(target.value))}/>
             </div>
         </footer>
     );
