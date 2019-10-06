@@ -1,0 +1,29 @@
+.Row {
+    font-size: .8em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.Row-content {
+    flex: 1;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.Row-reminder-text {
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
+
+.Row-reminder-duration {
+    font-style: italic;
+    font-size: .7em;
+}
+
+.Row-delete {
+    width: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}

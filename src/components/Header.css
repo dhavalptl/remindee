@@ -1,0 +1,18 @@
+.Header {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+    align-items: center;
+}
+
+.Header-title {
+    width: 100px;
+    color: white;
+    font-weight: bold;
+}
+
+.Header-items {
+    flex: 1;
+    text-align: right;
+}

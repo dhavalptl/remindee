@@ -1,0 +1,14 @@
+.Btn {
+    width: 70px;
+    margin-left: 2px;
+    margin-right: 2px;
+    height: 30px;
+    font-size: .8em;
+    background-color: goldenrod;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    outline: none !important;
+}
