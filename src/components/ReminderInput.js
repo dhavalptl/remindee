@@ -1,27 +1,40 @@
-import React from 'react';
-import Dropdown from "./Dropdown";
+import React, {useState} from 'react';
 import Button from "./Button";
+import {useDispatch} from "react-redux";
+import uuid from "uuid/v4";
+import moment from "moment";
 import "./ReminderInput.css";
 
-const reminderDurationOptions = [{
-    label: "Today",
-    value: "today"
-}, {
-    label: "Tomorrow",
-    value: "tomorrow"
-}];
-
 function ReminderInput() {
-    function handleOnChange(selectedValue){
+    const [text, setText] = useState("");
+    const [startReminder, setStartReminder] = useState(moment().utc().toDate());
+    const dispatch = useDispatch();
+    const formattedDuration = moment(startReminder).utc().format("YYYY-MM-DD");
+    function onKeyPressOnText(event) {
+        if(event.key === 'Enter'){
+            addReminder();
+        }
     }
     function addReminder(){
+        if(!text || !startReminder) {
+            return;
+        }
+        dispatch({
+            type: "ADD_REMINDER",
+            payload: {
+                id: uuid(),
+                text,
+                createdOn: startReminder
+            }
+        });
+        setText("");
     }
     return (
         <footer className="Footer">
-            <input type="text" className="Footer-input Input" placeholder="Enter reminder text"/>
+            <input type="text" value={text} className="Footer-input Input" onKeyPress={onKeyPressOnText} placeholder="Enter reminder text" onChange={({target}) => setText(target.value)}/>
             <div className="Footer-items">
-            <Dropdown options={reminderDurationOptions} defaultValue={"today"} onChange={handleOnChange}/>
-            <Button styleClassName="Btn-add" onClick={addReminder}>+</Button>
+                <input type="date" value={formattedDuration} onChange={({target}) => setStartReminder(target.value)}/>
+                <Button styleClassName="Btn-add" onClick={addReminder}>+</Button>
             </div>
         </footer>
     );

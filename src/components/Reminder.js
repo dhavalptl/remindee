@@ -6,7 +6,7 @@ import "./Reminder.css";
 function Reminder({ data, index, style }) {
     const dispatch = useDispatch();
     const item = data[index];
-    const reminderDuration = item.createdOn ? moment(item.createdOn).fromNow() : "today";
+    const reminderDuration = moment(item.createdOn).fromNow();
     function deleteReminder() {
         dispatch({
             type: "DELETE_REMINDER",

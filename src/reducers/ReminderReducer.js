@@ -10,5 +10,14 @@ const initialState = [{
     text: "Learn K8s"
 }];
 export default function ReminderReducer(state=initialState, action) {
-    return state;
+    switch (action.type) {
+        case "ADD_REMINDER":
+            return [...state, action.payload]
+        case "DELETE_REMINDER":
+            return state.filter(reminder => reminder.id !== action.payload)
+        case "CLAER_ALL_REMINDERS":
+            return [];
+        default:
+            return state;
+    }
 }
